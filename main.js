@@ -1,4 +1,4 @@
-//change the canvas height and width
+//define canvas, change canvas height and width
 const canvas = document.getElementById("myCanvas");
 canvas.height = window.innerHeight;
 canvas.width = 200;
