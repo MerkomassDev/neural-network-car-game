@@ -1,9 +1,9 @@
 class Controls{
     constructor(){
-        this.forward = false,
-        this.reverse = false,
-        this.left = false,
+        this.forward = false;
+        this.left = false;
         this.right = false;
+        this.reverse = false;
 
         this.#addKeyboardListeners();
     }
@@ -23,6 +23,7 @@ class Controls{
                     this.reverse = true;
                     break;
             }
+            console.table(this)
         }
         document.onkeyup = (event) => {
             switch(event.key){
@@ -39,6 +40,7 @@ class Controls{
                     this.reverse = false;
                     break;
             }
+            console.table(this)
         }
     }
 }
