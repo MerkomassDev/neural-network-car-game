@@ -2,15 +2,17 @@ class Car
 {
     constructor(x, y, width, height)
     {
+        //car rendering + sizing
         this.x=x;
         this.y=y;
         this.width=width;
         this.height=height;
 
+        //physics of the car
         this.speed=0;
-        this.acceleration=0.2;
+        this.forwardAcceleration=0.2;
         this.reverseAcceleration=0.1;
-        this.maxSpeed=3;
+        this.maxForwardSpeed=3;
         this.maxReverseSpeed=1.5;
         this.friction=0.05;
 
@@ -19,25 +21,30 @@ class Car
 
     update()
     {
+        //forward acceleration
         if(this.controls.forward)
         {
-            this.speed+=this.acceleration;
+            this.speed+=this.forwardAcceleration;
 
         }
+        //backwards acceleration
         if(this.controls.reverse)
         {
             this.speed-=this.reverseAcceleration;
         }
 
-        if(this.speed>this.maxSpeed)
+        //caps the max forward speed
+        if(this.speed>this.maxForwardSpeed)
         {
-            this.speed=this.maxSpeed;
+            this.speed=this.maxForwardSpeed;
         }
+        //caps the max reverse speed
         if(this.speed<-this.maxReverseSpeed)
         {
             this.speed=-this.maxReverseSpeed;
         }
 
+        //friction
         if(this.speed>0)
         {
             this.speed-=this.friction;
@@ -52,7 +59,7 @@ class Car
         {
             this.speed=0;
         }
-
+        
         this.y-=this.speed;
     }
 
