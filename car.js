@@ -22,6 +22,11 @@ class Car
 
     update()
     {
+        this.#move();
+    }
+
+    #move()
+    {
         //forward acceleration/control
         if(this.controls.forward)
         {
