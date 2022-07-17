@@ -1,6 +1,6 @@
 class Road
 {
-    constructor(x, width, laneCount=3)
+    constructor(x, width, laneCount=4)
     {
         this.x=x;
         this.width=width;
@@ -27,6 +27,16 @@ class Road
                 this.right,
                 i/this.laneCount
             )
+
+            if (i>0 && i<this.laneCount)
+            {
+                ctx.setLineDash([20, 20])
+            }
+            else
+            {
+                ctx.setLineDash([])
+            }
+
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
