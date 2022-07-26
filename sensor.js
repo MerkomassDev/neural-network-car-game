@@ -29,7 +29,7 @@ class Sensor
     {
         let touches=[];
         
-        for (let i=0; i<roadBorders.length; i++)
+        for(let i=0; i<roadBorders.length; i++)
         {
             const touch=getIntersection
             (
@@ -38,13 +38,13 @@ class Sensor
                 roadBorders[i][0],
                 roadBorders[i][1]
             )
-            if (touch)
+            if(touch)
             {
                 touches.push(touch)
             }
         }
 
-        if (touches.length==0)
+        if(touches.length==0)
         {
             return null;
         }

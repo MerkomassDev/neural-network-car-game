@@ -19,9 +19,9 @@ class Car
 
         this.damaged=false;
 
-        this.sensor= new Sensor(this);
+        this.sensor=new Sensor(this);
 
-        this.controls = new Controls();
+        this.controls =new Controls();
     }
 
     update(roadBorders)
@@ -37,7 +37,7 @@ class Car
     
     #assessDamage(roadBorders)
     {
-        for (let i=0; i<roadBorders.length; i++)
+        for(let i=0; i<roadBorders.length; i++)
         {
             if(polysIntersect(this.polygon, roadBorders[i]))
             {
@@ -117,7 +117,7 @@ class Car
         }
 
         //makes sure the car doesn't move when the speed is less than friction (i dont entirely understand how this works)
-        if (Math.abs(this.speed)<this.friction)
+        if(Math.abs(this.speed)<this.friction)
         {
             this.speed=0;
         }
